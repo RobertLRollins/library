@@ -6,13 +6,13 @@ function Book(title, author, pages, read) {
 }
 
 Book.prototype.toggleRead = function () {
-    this.read = !this.read;
+    this.read = this.read === 'Yes' ? 'No' : 'Yes';
 };
 
 const books = [
-    new Book("1984", "George Orwell", 328, true),
-    new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false),
-    new Book("To Kill a Mockingbird", "Harper Lee", 281, true)
+    new Book("Neuromancer", "William Gibson", 271, false),
+    new Book("Do Androids Dream of Electric Sheep?", "Philip K. Dick", 210, true),
+    new Book("1984", "George Orwell", 328, true)
 ];
 
 function displayBooks() {
