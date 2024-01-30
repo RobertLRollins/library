@@ -1,0 +1,14 @@
+html {
+    background-color: brown;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+dialog {
+    border: none;
+    border-radius: 5px;
+}
