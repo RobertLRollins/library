@@ -12,7 +12,13 @@ Book.prototype.toggleRead = function () {
 const books = [
     new Book("Neuromancer", "William Gibson", 271, false),
     new Book("Do Androids Dream of Electric Sheep?", "Philip K. Dick", 210, true),
-    new Book("1984", "George Orwell", 328, true)
+    new Book("1984", "George Orwell", 328, true),
+    new Book("Brave New World", "Aldous Huxley", 264, false),
+    new Book("Fahrenheit 451", "Ray Bradbury", 194, true),
+    new Book("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 224, false),
+    new Book("Dune", "Frank Herbert", 896, true),
+    new Book("The Lord of the Rings", "J.R.R. Tolkien", 1178, false),
+    new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 309, true)
 ];
 
 function displayBooks() {

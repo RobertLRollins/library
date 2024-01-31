@@ -1,23 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+* {
+    font-size: 20px;
+}
+
 html {
     background-color: #E8CCA5;
-    font-size: 40px;
+    font-family: 'Nunito', sans-serif;
 }
 
 .card {
-    border: 1px solid #ddd;
+    background-color: #E1B67F;
+    border: 8px solid #014236;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px gray;
 }
 
 dialog {
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .remove-button {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     margin-top: 15px;
 }
 
@@ -26,19 +35,87 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    background-color: #E8CCA5;
+    margin: 0;
 }
 
-#new-book-button {
+button {
     cursor: pointer;
-    padding: 20px;
-    font-size: 40px;
+    padding: 10px;
+    font-size: 1rem;
+
+}
+
+button {
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 0;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E1B67F;
+    color: #014236;
+    border-radius: 0.25rem;
+    box-shadow: 0 3px 10px gray;
+    padding: 0.25rem 0.75rem;
+    text-align: center;
+    line-height: 1.1;
+
+    transition: 220ms all ease-in-out;
+
+    &:hover {
+        background-color: #3E9274;
+    }
+
+    &:focus {
+        outline-style: solid;
+        outline-color: transparent;
+        box-shadow: #014236;
+    }
+}
+
+input {
+    height: 1rem;
+    font-size: 1rem;
+}
+
+input {
+    border: 2px solid #014236;
+    border-radius: 0.25rem;
+    cursor: text;
+    line-height: 1.1;
+}
+
+input:hover {
+    border: 2px solid #E1B67F;
+}
+
+select {
+    border: 2px solid #014236;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+}
+
+select:hover {
+    border: 2px solid #E1B67F;
 }
 
 #logo {
-    height: 30vh;
+    height: 20rem;
 }
 
 #books-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+h2 {
+    font-size: 1.5rem;
 }
