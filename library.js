@@ -32,25 +32,36 @@ function displayBooks() {
         const pages = document.createElement('p');
         pages.textContent = `Pages: ${book.pages}`;
 
-        const read = document.createElement('p');
-        read.textContent = `Read: ${book.read}`;
+        const readDiv = document.createElement('div');
 
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
+        const readLabel = document.createElement('label');
+        readLabel.textContent = 'Read: ';
+        readLabel.htmlFor = 'read-status-' + index;
+
+        const readDropdown = document.createElement('select');
+        readDropdown.id = 'read-status-' + index;
+        readDropdown.innerHTML =
+            `
+            <option value="Yes" ${book.read === 'Yes' ? 'selected' : ''}>Yes</option>
+            <option value="No" ${book.read === 'No' ? 'selected' : ''}>No</option>
+        `;
+        readDropdown.onchange = (event) => toggleReadStatus(index, event.target.value);
+
+        readDiv.appendChild(readLabel);
+        readDiv.appendChild(readDropdown);
+
+        const removeButton = document.createElement('img');
+        removeButton.src = 'delete.svg';
+        removeButton.alt = 'Remove';
+        removeButton.className = 'remove-button';
         removeButton.setAttribute('data-index', index);
         removeButton.onclick = removeBook;
-
-        const toggleReadButton = document.createElement('button');
-        toggleReadButton.textContent = 'Toggle Read Status';
-        toggleReadButton.setAttribute('data-index', index);
-        toggleReadButton.onclick = toggleReadStatus;
 
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
-        card.appendChild(read);
+        card.appendChild(readDiv);
         card.appendChild(removeButton);
-        card.appendChild(toggleReadButton);
 
         container.appendChild(card);
     });
@@ -60,12 +71,12 @@ function addBook(event) {
     event.preventDefault(); // Prevent form submission
 
     const form = document.getElementById('new-book-form');
-    const newBook = new Book(
-        form.title.value,
-        form.author.value,
-        form.pages.value,
-        form.read.checked
-    );
+    const title = form.querySelector('[name="title"]').value;
+    const author = form.querySelector('[name="author"]').value;
+    const pages = form.querySelector('[name="pages"]').value;
+    const read = form.querySelector('[name="read"]').value === 'Yes'; // Get the selected value of the read dropdown
+
+    const newBook = new Book(title, author, pages, read)
 
     books.unshift(newBook); // Add the new book to the start of the array
     displayBooks(); // Update the display
@@ -94,3 +105,5 @@ document.getElementById('new-book-button').addEventListener('click', () => {
 });
 
 displayBooks();
+
+//why isnt the add book button working

@@ -1,5 +1,6 @@
 html {
-    background-color: brown;
+    background-color: #E8CCA5;
+    font-size: 40px;
 }
 
 .card {
@@ -11,4 +12,33 @@ html {
 dialog {
     border: none;
     border-radius: 5px;
+}
+
+.remove-button {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-book-button {
+    cursor: pointer;
+    padding: 20px;
+    font-size: 40px;
+}
+
+#logo {
+    height: 30vh;
+}
+
+#books-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
