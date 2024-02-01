@@ -38,6 +38,11 @@ function displayBooks() {
         const pages = document.createElement('p');
         pages.textContent = `Pages: ${book.pages}`;
 
+        const notTitle = document.createElement('div');
+
+        const bottomDiv = document.createElement('div');
+        bottomDiv.className = 'bottomDiv';
+
         const readDiv = document.createElement('div');
 
         const readLabel = document.createElement('label');
@@ -53,9 +58,6 @@ function displayBooks() {
         `;
         readDropdown.onchange = (event) => toggleReadStatus(index, event.target.value);
 
-        readDiv.appendChild(readLabel);
-        readDiv.appendChild(readDropdown);
-
         const removeButton = document.createElement('img');
         removeButton.src = 'delete.svg';
         removeButton.alt = 'Remove';
@@ -63,11 +65,18 @@ function displayBooks() {
         removeButton.setAttribute('data-index', index);
         removeButton.onclick = removeBook;
 
+        readDiv.appendChild(readLabel);
+        readDiv.appendChild(readDropdown);
+
+        bottomDiv.appendChild(readDiv);
+        bottomDiv.appendChild(removeButton);
+
+        notTitle.appendChild(author);
+        notTitle.appendChild(pages);
+        notTitle.appendChild(bottomDiv);
+
         card.appendChild(title);
-        card.appendChild(author);
-        card.appendChild(pages);
-        card.appendChild(readDiv);
-        card.appendChild(removeButton);
+        card.appendChild(notTitle);
 
         container.appendChild(card);
     });

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;1000&display=swap');
 
 * {
     font-size: 20px;
@@ -7,6 +7,7 @@
 html {
     background-color: #E8CCA5;
     font-family: 'Nunito', sans-serif;
+
 }
 
 .card {
@@ -16,6 +17,25 @@ html {
     margin: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px gray;
+    display: flex;
+    flex-direction: column;
+    background-image: url("book-bonsaii-bg.svg");
+    justify-content: space-between;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.card h2 {
+    font-weight: 1000;
+    margin: 0;
+}
+
+.bottomDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 dialog {
@@ -25,9 +45,8 @@ dialog {
 
 .remove-button {
     cursor: pointer;
-    width: 50px;
-    height: 50px;
-    margin-top: 15px;
+    height: 2rem;
+    align-self: flex-end;
 }
 
 header {
@@ -36,8 +55,6 @@ header {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #E8CCA5;
-    margin: 0;
 }
 
 button {
@@ -93,7 +110,7 @@ input {
 }
 
 input:hover {
-    border: 2px solid #E1B67F;
+    border: 2px solid orange;
 }
 
 select {
@@ -104,11 +121,12 @@ select {
 }
 
 select:hover {
-    border: 2px solid #E1B67F;
+    border: 2px solid orange;
 }
 
 #logo {
     height: 20rem;
+    filter: drop-shadow(3px 3px 3px gray);
 }
 
 #books-container {
@@ -118,4 +136,20 @@ select:hover {
 
 h2 {
     font-size: 1.5rem;
+}
+
+#new-book-dialog {
+    box-shadow: 0 10px 30px black;
+    padding: 0;
+}
+
+#new-book-form {
+    background-color: #E1B67F;
+    border: 8px solid #014236;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("book-bonsaii-bg.svg");
+    justify-content: space-between;
 }
