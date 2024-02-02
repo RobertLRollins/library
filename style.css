@@ -28,6 +28,7 @@ html {
 }
 
 .card h2 {
+    font-size: 1.5rem;
     font-weight: 1000;
     margin: 0;
 }
@@ -89,12 +90,6 @@ button {
     &:hover {
         background-color: #3E9274;
     }
-
-    &:focus {
-        outline-style: solid;
-        outline-color: transparent;
-        box-shadow: #014236;
-    }
 }
 
 input {
@@ -107,10 +102,10 @@ input {
     border-radius: 0.25rem;
     cursor: text;
     line-height: 1.1;
-}
 
-input:hover {
-    border: 2px solid orange;
+    &:hover {
+        border: 2px solid orange;
+    }
 }
 
 select {
@@ -118,10 +113,10 @@ select {
     border-radius: 0.25rem;
     cursor: pointer;
     line-height: 1.1;
-}
 
-select:hover {
-    border: 2px solid orange;
+    &:hover {
+        border: 2px solid orange;
+    }
 }
 
 #logo {
@@ -132,10 +127,6 @@ select:hover {
 #books-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-h2 {
-    font-size: 1.5rem;
 }
 
 #new-book-dialog {

@@ -5,10 +5,6 @@ function Book(title, author, pages, read) {
     this.read = read ? 'Yes' : 'No';
 }
 
-Book.prototype.toggleRead = function () {
-    this.read = this.read === 'Yes' ? 'No' : 'Yes';
-};
-
 const books = [
     new Book("Neuromancer", "William Gibson", 271, false),
     new Book("Do Androids Dream of Electric Sheep?", "Philip K. Dick", 210, true),
@@ -105,20 +101,15 @@ function removeBook(event) {
     displayBooks();
 }
 
-function toggleReadStatus(event) {
-    const index = event.target.getAttribute('data-index');
-    books[index].toggleRead();
+function toggleReadStatus(bookIndex, newReadValue) {
+    books[bookIndex].read = newReadValue;
     displayBooks();
 }
 
-// Event listener for the new book form submission
-document.getElementById('new-book-form').addEventListener('submit', addBook);
-
-// Event listener for the new book button
 document.getElementById('new-book-button').addEventListener('click', () => {
     document.getElementById('new-book-dialog').showModal();
 });
 
-displayBooks();
+document.getElementById('new-book-form').addEventListener('submit', addBook);
 
-//why isnt the add book button working
+displayBooks();
